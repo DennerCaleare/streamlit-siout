@@ -1,134 +1,144 @@
-# 🌊 Ferramenta de Comparação de Registros - SNISB vs SIOUT-RS
+# 🌊 Ferramenta SNISB vs SIOUT-RS
+## Transformando Dados em Decisões - Da Planilha ao Dashboard Empresarial
 
-> Dashboard inteligente para análise e cruzamento de dados de barragens entre o Sistema Nacional de Informações sobre Segurança de Barragens (SNISB) e o Sistema de Outorgas de Água do Rio Grande do Sul (SIOUT-RS).
+> **Solução web que substituiu planilhas complexas por um dashboard inteligente, facilitando análise de 10+ mil barragens com filtros, mapa interativo e export em múltiplos formatos.**
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://sioutrs.streamlit.app/)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![Agencia Zetta](https://img.shields.io/badge/Developed%20by-Ag%C3%AAncia%20Zetta-green.svg)](https://agenciazetta.ufla.br/)
+[![Agência Zetta](https://img.shields.io/badge/Agencia-Zetta-green.svg)](https://agenciazetta.ufla.br/)
 
 ## 🚀 Acesso Rápido
 
-👉 **[Abrir Dashboard Online](https://sioutrs.streamlit.app/)**
+**Veja em ação:** https://sioutrs.streamlit.app/
 
-## 📋 Sobre o Projeto
+**Desenvolvedor:** Denner Caleare | [GitHub](https://github.com/DennerCaleare) | [LinkedIn](https://linkedin.com/in/dennercaleare)
 
-Sistema web inteligente que realiza cruzamento, validação e comparação de dados entre três bases de dados críticas:
+---
 
-- **SNISB**: Cadastro Nacional de Barragens gerenciado pela ANA
-- **SIOUT-RS**: Autorizações estaduais de recursos hídricos
-- **Polígonos ANA**: Massas d'água oficialmente mapeadas
+## 📚 O Problema Que Resolvi
 
-O objetivo principal é **identificar barragens com inconsistências cadastrais** e garantir conformidade com os requisitos legais de outorga.
+Agência Zetta trabalhava com **10.129 registros de barragens em planilhas Excel**, resultando em:
+- 💪 Dificuldade em navegar dados complexos
+- 🌈 Impossibilidade de visualizar padrões geográficos
+- 📒 Filtros manuais lentos e propensos a erros
+- 🚫 Falta de interatividade para tomadas de decisão
 
-## ✨ Funcionalidades
+## ✨ A Solução Que Entreguei
 
-### 📊 Visualização de Dados
-- 📋 Tabela paginada com 50 registros por página
-- 🎨 Código de cores automático por status de compatibilidade
-- 📊 Contador dinâmico de registros filtrados
-- 📥 Exportação em Excel, CSV e JSON
-- 📱 Interface 100% responsiva
+**Dashboard web interativo** com:
+
+### 📊 Visualização Inteligente
+- 💫 Tabelas paginadas e coloridas por compatibilidade
+- 🗺️ Mapa interativo mostrando localização de cada barragem
+- 🎯 Sistema de cores por nível de risco (verde/amarelo/vermelho)
+- 📊 8+ gráficos de análise dinâmicos
 
 ### 🔍 Filtros Avançados
-- 📅 Filtro por período de cadastro
-- 🔖 Busca por código SNISB com autocompletar
-- 🎯 Filtros por finalidade de uso
-- 👤 Busca por empreendedor/proprietário
-- 📋 Filtro por número de autorização
-- 🔗 Lógica combinada AND entre filtros
+- 📅 Por período de cadastro
+- 🔖 Código SNISB com autocompletar
+- 🍰 Por finalidade de uso (Irrigação, Dessedentação, etc)
+- 👥 Por empreendedor/proprietário
+- 📚 Por número de autorização
 
-### 🗺️ Mapa Interativo
-- 🗺️ Visualização geoespacial com satélite Esri HD
-- 🎛️ Controle de camadas sem recarga da página
-- 🎯 Marcadores coloridos por compatibilidade
-- 📍 Popups informativos ao clicar nos pontos
-- 🎨 Polígonos ANA renderizados com otimização
+### 📥 Export Profissional
+- 📋 Excel (.xlsx)
+- 📄 CSV (.csv)
+- 📚 JSON (.json)
 
-### 📚 Ajuda e Glossário
-- 📖 Critérios de elegibilidade e validação
-- 📝 Descrição detalhada de 23 colunas
-- 📚 Dicionário de situações e status
-- 🎨 Legenda completa de cores
-- ❓ FAQ com perguntas frequentes
+## 📙 Impacto Entregue
 
-## 🛠️ Tecnologias
+✅ **Facilidade de acesso** - Equipe da Agência agora consulta dados em segundos
+✅ **Análise geográfica** - Mapa permite ver padrões regionais instantaneamente
+✅ **Tomada de decisão** - Cores e filtros destacam inconsistências cadastrais
+✅ **Documentos dinâmicos** - Export em tempo real de dados filtrados
+
+## 🛠️ Stack Técnico
 
 ```python
-Streamlit 1.32+         # Framework web
-Pandas 2.0+            # Análise de dados
+Streamlit 1.32+         # Framework web responsivo
+Pandas 2.0+            # Processamento de dados
 Folium 0.14+           # Mapas interativos
-shapely 2.0+           # Geometrias espaciais
-GeoPandas 0.14+        # Dados geoespaciais
-OpenPyXL               # Leitura de Excel
+Plotly                 # Gráficos avançados
+GeoPandas 0.14+        # Análise geoespacial
+Shapely 2.0+           # Geometrias espaciais
 Python 3.11+           # Linguagem
-```
-
-## 📦 Instalação
-
-### Localmente
-
-```bash
-# 1. Clone o repositório
-git clone https://github.com/DennerCaleare/streamlit-siout.git
-cd streamlit-siout
-
-# 2. Instale as dependências
-pip install -r requirements.txt
-
-# 3. Execute o app
-streamlit run app.py
-
-# A aplicação abrirá em http://localhost:8501
 ```
 
 ## 📂 Estrutura do Projeto
 
 ```
 streamlit-siout/
-├── app.py                                  # Aplicação principal
-├── requirements.txt                        # Dependências Python
-├── README.md                               # Este arquivo
-├── RELATORIO_FINAL_SNISB_SIOUT.csv        # Dataset principal
-├── RELATORIO_FINAL_SNISB_SIOUT.xlsx       # Dataset alternativo
-└── image/
-    └── app/
-        ├── Logo.png                        # Favicon
-        └── LogoZetta.png                   # Logo Agência Zetta
+├── app.py                          # Aplicação principal
+├── requirements.txt               # Dependências
+├── README.md                      # Este arquivo
+├── RELATORIO_FINAL_SNISB_SIOUT.csv # Dataset principal
+├── RELATORIO_FINAL_SNISB_SIOUT.xlsx # Dataset alternativo
+└── image/app/
+    ├── Logo.png                     # Favicon
+    └── LogoZetta.png                # Logo Agência
 ```
 
-## 📊 Dados
+## 🚀 Como Usar
+
+### Acessar Online
+```
+Acesse: https://sioutrs.streamlit.app/
+```
+
+### Rodar Localmente
+```bash
+git clone https://github.com/DennerCaleare/streamlit-siout.git
+cd streamlit-siout
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+## 📊 Funcionalidades Detalhadas
+
+### 🗺️ Mapa Interativo
+- Visualização geoespacial com satélite Esri
+- Marcadores coloridos por compatibilidade
+- Popups com dados detalhados
+- Polígonos ANA sobrepostos
+- Legenda fixa interativa
+
+### 💫 Tabela Inteligente
+- Paginação de 50 registros
+- Código de cores por status
+- Contador dinâmico
+- Busca e filtros combinados
+
+### 📚 Glossário Completo
+- Critérios de elegibilidade
+- Descrição de 23 colunas
+- Dicionário de situações
+- FAQ detalhado
+
+## 📊 Dados Principais
 
 | Métrica | Valor |
 |---------|-------|
 | Total de registros | 10.129 barragens |
-| Registros com polígonos ANA | 9.642 (95,2%) |
-| Polígonos ANA únicos | ~4.214 massas d'água |
-| Colunas | 23 campos |
-| Sistema de coordenadas | SIRGAS 2000 (EPSG:4674) |
-| Formato preferencial | CSV |
-
-## 🎨 Hierarquia de Cores
-
-| Cor | Status | Significado |
-|-----|--------|----------|
-| 🟢 | Totalmente Compatível | Todos campos conferem |
-| 🟡 | Parcialmente Compatível | Alguns campos diferem |
-| 🟠 | Compatível Geograficamente | Mesma localização, dados divergentes |
-| 🔴 Escuro | Incompatível | Sem correspondência entre sistemas |
-| 🔴 Claro | Descartado | Eliminado por hierarquia |
-| 🔵 | Selecionado | Aprovado para validação |
+| Com polígonos ANA | 9.642 (95,2%) |
+| Colunas de dados | 23 campos |
+| Formato preferido | CSV |
+| Sistema de coordenadas | SIRGAS 2000 |
 
 ## 👨‍💻 Desenvolvido por
 
-**Denner Caleare** | [GitHub](https://github.com/DennerCaleare) | [LinkedIn](https://linkedin.com/in/dennercaleare)
+**Denner Caleare**
 
-Em parceria com **Agência Zetta** - Agência de inovação da UFLA
+- 🌟 Desenvolvedor Full Stack em Streamlit
+- 📚 Especialista em dashboards de dados
+- 💼 Agência Zetta - UFLA
 
-[https://agenciazetta.ufla.br/](https://agenciazetta.ufla.br/)
+**Contato:**
+- [GitHub](https://github.com/DennerCaleare)
+- [LinkedIn](https://linkedin.com/in/dennercaleare)
 
 ## 📝 Licença
 
-Este projeto foi desenvolvido para uso institucional e análise de dados públicos de recursos hídricos.
+Desenvolvido para uso institucional. Agência Zetta, UFLA.
 
 ---
 
